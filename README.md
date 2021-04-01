@@ -1,3 +1,3 @@
-The Basics
+### The Basics
 
-Fundamentals for Python frameworks and databases.
+Fundamentals for python-based frameworks and databases.
