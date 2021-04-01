@@ -1,7 +1,6 @@
 ### Basic Flask
-Flask fundamentals
 
-Easy to grab and use simple flask implementations:
+Flask fundamentals. Easy to grab and use *prêt-à-porter* flask implementations:
 
 - Blueprints and context manager
 - SQLalchemy and Non-SQLalchemy database management
