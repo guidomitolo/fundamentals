@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome {{ current_user.username }}!</h1>
+    <p>This is a simple flask based app with flask_forms and flask_login libraries</p>
+    <p>There are two ways of displaying a FormList</p>
+    <h2>1. Testing a FormList (with range iter)</h2>
+    <div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <br>
+            {{ form.category_name.label }} {{ form.category_name }}
+            <br>
+            {% for i in range(3) %}
+                {{ form.products[i].title.label }} {{ form.products[i].title }}
+                {{ form.products[i].price.label }} {{ form.products[i].price }}
+            <br>
+            {% endfor %}
+            <button>Submit</button>
+        </form>
+        <h2>2. Testing a FormList (with attributes iter)</h2>
+        <p>The name of each list is printed by default above the fields</p>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.category_name.label }} {{ form.category_name }}
+            <br>
+            {% for nested in form.products %}
+                {{ nested.label }}{{ nested }}
+            {% endfor %}
+        </form>
+    </div>
+
+{% endblock %}

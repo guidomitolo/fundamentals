@@ -1,0 +1,7 @@
+__pycache__
+*.json
+*.sql
+.vscode
+data
+*.sqlite3
+*.db

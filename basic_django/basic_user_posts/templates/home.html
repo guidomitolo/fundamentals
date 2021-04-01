@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    {% if user.is_authenticated %}
+        User: {{ user.username }}
+    {% else %}
+        No hay nadie logueado.
+    {% endif %}
+</div>
+<div>
+    {% for post in posts %}
+    <a>{{ post.author }}</a>
+    <small>{{ post.date_posted|date:"F d, Y" }}</small>
+    <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+    <p>{{ post.content }}</p>
+    {% endfor %}
+</div>
+<div>
+    <a href="{% url 'post-create'%}">¡Posteá un nuevo comentario!</a></h2>
+</div>
+{% endblock content %}

@@ -1,0 +1,1 @@
+preparing a provisional data persistance model for user registration and logging in/out in postgresql and psycopg2 following flask docs guidelines for sqlite. the schema creation is done through the CLI. the connection to the db is open per request and closed with the termination of the app context.

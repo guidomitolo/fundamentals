@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Post:</legend>
+                {{ form }}
+            </fieldset>
+            <button type="submit">Submit Post!</button>
+        </form>
+    </div>
+{% endblock content %}

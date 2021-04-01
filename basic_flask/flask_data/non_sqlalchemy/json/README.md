@@ -1,0 +1,1 @@
+preparing a provisional data persistance model for users registration and logging in/out in json

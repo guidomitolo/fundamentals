@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% block app_content %}
+        <div>
+            <iframe
+                    src={{ dash_url }}
+                    frameborder="0"
+                    onload="resizeIframe(this)"
+            >
+            </iframe>
+        </div>
+    {% endblock %}
+{% endblock %}
