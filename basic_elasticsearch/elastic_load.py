@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 insert_data(connection, "news", json.dumps(table))
 
     # save table in local json
-    with open(os.path.join(data_dir, "news_table_list.json"), 'w') as file:
+    with open(os.path.join(data_dir, "table.json"), 'w') as file:
 
         file.write(json.dumps(all_news))
         file.close()
