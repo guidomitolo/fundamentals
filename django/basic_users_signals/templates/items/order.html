@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<h3>Order Product</h3>
+<form method="POST" novalidate>
+    {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <strong>{{ error }}</strong>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+            <strong>{{ error }}</strong>
+    {% endfor %}
+    {% endif %}
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <button type="submit">Order</button>
+</form>
+
+{% endblock %}

@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'oo^um*=bu5gbr4@fboo(&&8x&*s!!+8+#n+wey9)hlr!-u8d%7'
+SECRET_KEY = '5yiyqxu9dno^0g@)a3&@e$o-=)ae1h=(g*8=*2t(f5-=yx0bmd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # main views
+    # apps objects
     'main.apps.MainConfig',
-    # users app
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'items.apps.ItemsConfig'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,8 @@ ROOT_URLCONF = 'basic_test.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # all templates in base dir (outside apps)
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,11 +124,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# LOGIN FEATURES
+# login/logout redirect
+# https://docs.djangoproject.com/en/3.2/ref/settings/#login-redirect-url
 
-# where to redirect after login
-# # avoid default login redirect to http://localhost/accounts/profile/
+LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'home'
-# url to redirect if not logged in
-LOGIN_URL = 'login'
+
+LOGOUT_REDIRECT_URL = 'home'
