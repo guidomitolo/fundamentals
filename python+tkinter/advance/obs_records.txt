@@ -1,0 +1,16 @@
+10/02/2020 21:14:33 Ha ingresado el observador <observador.espia_uno object at 0x00000258840D2D88> a <__main__.welcome object at 0x0000025883A7A408>
+10/02/2020 21:14:33 Ha ingresado el observador <observador.espia_dos object at 0x00000258840D2F08> a <__main__.welcome object at 0x0000025883A7A408>
+11/02/2020 09:04:51 Ha ingresado el observador <observador.espia_uno object at 0x000001337B916708> a <__main__.welcome object at 0x000001337B1C5648>
+11/02/2020 09:04:51 Ha ingresado el observador <observador.espia_dos object at 0x000001337B916848> a <__main__.welcome object at 0x000001337B1C5648>
+11/02/2020 09:05:20 Ha ingresado el observador <observador.espia_uno object at 0x00000183CDFE6748> a <__main__.welcome object at 0x00000183CD875648>
+11/02/2020 09:05:20 Ha ingresado el observador <observador.espia_dos object at 0x00000183CDC70DC8> a <__main__.welcome object at 0x00000183CD875648>
+11/02/2020 09:05:42 Ha ingresado el observador <observador.espia_uno object at 0x000001E506146708> a <__main__.welcome object at 0x000001E5059E5648>
+11/02/2020 09:05:42 Ha ingresado el observador <observador.espia_dos object at 0x000001E506146848> a <__main__.welcome object at 0x000001E5059E5648>
+11/02/2020 09:07:33 Ha ingresado el observador <observador.espia_uno object at 0x0000015FDF79B0C8> a <__main__.welcome object at 0x0000015FDF046608>
+11/02/2020 09:07:33 Ha ingresado el observador <observador.espia_dos object at 0x0000015FDF79B208> a <__main__.welcome object at 0x0000015FDF046608>
+11/02/2020 09:08:54 Ha ingresado el observador <observador.espia_uno object at 0x0000019C2D6B5748> a <__main__.welcome object at 0x0000019C2CF46608>
+11/02/2020 09:08:54 Ha ingresado el observador <observador.espia_dos object at 0x0000019C2D6B5888> a <__main__.welcome object at 0x0000019C2CF46608>
+11/02/2020 09:09:28 Ha ingresado el observador <observador.espia_uno object at 0x00000178C3316F88> a <__main__.welcome object at 0x00000178C2BF6608>
+11/02/2020 09:09:28 Ha ingresado el observador <observador.espia_dos object at 0x00000178C3010408> a <__main__.welcome object at 0x00000178C2BF6608>
+11/02/2020 09:11:42 Ha ingresado el observador <observador.espia_uno object at 0x0000020DBBFA5CC8> a <__main__.welcome object at 0x0000020DBB94C488>
+11/02/2020 09:11:42 Ha ingresado el observador <observador.espia_dos object at 0x0000020DBBFA5E48> a <__main__.welcome object at 0x0000020DBB94C488>

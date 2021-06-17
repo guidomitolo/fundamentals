@@ -1,3 +1,3 @@
-### The Basics
+### Fundamentals
 
-Fundamentals for python-based frameworks and databases.
+Grounding structures for python, its frameworks and elasticsearch.
