@@ -4,7 +4,7 @@ import copy
 import random
 
 # sender = object
-# instance = the object/sender instanciated
+# instance = the object/sender instantiated
 
 # pre save example
 def add_id_price(sender, instance, **kwargs):
@@ -17,7 +17,6 @@ def update_stock(sender, instance, **kwargs):
     stock = Stock.objects.filter(id=instance.stock_item.id).first()
     stock.quantity = stock.quantity - instance.quantity
     stock.save()
-
 
 # post save example
 def notify_user(sender, instance, **kwargs):
