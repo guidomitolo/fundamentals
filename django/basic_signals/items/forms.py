@@ -5,7 +5,7 @@ from .models import Order, Stock
 class StockForm(forms.ModelForm):
     class Meta:
         model = Stock
-        fields = ['product', 'price', 'quantity']
+        fields = ['product', 'unit_price', 'quantity']
 
 
 class OrderForm(forms.ModelForm):

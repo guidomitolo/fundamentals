@@ -35,8 +35,11 @@ def order(requests):
                 stock_item = product,
                 quantity = form.cleaned_data.get('quantity')
             )
-            ordered.save() # hace falta el save aca si esta en signals? Si xq asi se activa la señal
-            messages.success(requests, 'Product Ordered!')
+            ordered.save()
+            if ordered.id:
+                messages.success(requests,f'You have ordered {ordered.quantity} {product.product}(s)!')
+            else:
+                messages.error(requests,'No Stock!')
             return redirect("order")
 
     else:

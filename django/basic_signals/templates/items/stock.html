@@ -4,10 +4,11 @@
 <h2>Stock</h2>
 
 <h3>Current Stock</h3>
+<p>Item | Price | Quantity</p>
 {% for item in products %}
 <p>
     {{ item.product }}
-    {{ item.price }}
+    {{ item.unit_price }}
     {{ item.quantity }}
 </p>
 {% endfor %}
