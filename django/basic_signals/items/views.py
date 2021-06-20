@@ -30,14 +30,9 @@ def order(requests):
     if requests.method == 'POST':
         form = OrderForm(requests.POST)
         if form.is_valid():
-            product = Stock.objects.filter(product = form.cleaned_data.get('product')).first()
-            ordered = Order(
-                stock_item = product,
-                quantity = form.cleaned_data.get('quantity')
-            )
-            ordered.save()
-            if ordered.id:
-                messages.success(requests,f'You have ordered {ordered.quantity} {product.product}(s)!')
+            form.save()
+            if form.save().id:
+                messages.success(requests,f"You have ordered {form.save().quantity} {form.save().stock_item.product}(s)!")
             else:
                 messages.error(requests,'No Stock!')
             return redirect("order")

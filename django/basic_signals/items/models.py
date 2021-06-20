@@ -11,7 +11,7 @@ class Stock(models.Model):
 
 
 class Order(models.Model):
-    stock_item = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    stock_item = models.ForeignKey(Stock, on_delete=models.CASCADE, verbose_name='Product')
     quantity = models.IntegerField('Amount', null=True)
     total_price = models.FloatField('Total price', null=True)
     trans_id = models.CharField('Transaction Id', max_length=10, blank=True)

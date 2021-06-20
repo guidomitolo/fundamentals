@@ -12,10 +12,10 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = ['product', 'quantity']
+        fields = ['stock_item', 'quantity']
 
-    product = forms.ModelChoiceField(
-        queryset=Stock.objects.values_list('product', flat=True).all(), 
-        to_field_name='product',
-        required=True
-    )
+    # product = forms.ModelChoiceField(
+    #     queryset=Stock.objects.all(), 
+    #     # to_field_name='product',
+    #     # required=True
+    # )
