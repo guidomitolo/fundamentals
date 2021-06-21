@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<h1>Cars</h1>
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type='submit'>Load</button>
+</form>
+
+<br>
+<a href="{% url 'simplest_api' %}">API_1</a>
+<a href="{% url 'simplest_api_2' %}">API_2</a>
+<br>
+
+{% endblock %}

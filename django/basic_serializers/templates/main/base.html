@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    </head>
+    <body>
+        <nav>
+            <a href="{% url 'cars' %}">Cars</a>
+            <a href="#">Houses</a>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+            <br>
+            {% if request.path != "/" %}
+            <a href="{% url 'home' %}">Back</a>
+            {% endif %}
+        </main>
+    </body>
+</html>
