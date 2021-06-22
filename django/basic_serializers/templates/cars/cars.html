@@ -17,7 +17,7 @@
     <li><a href="{% url 'simplest_api_2' %}">API_HTTP_response</a></li>
 </ul>
 <h5>Django REST-Framework</h5>
-<h6> api_view</h6>
+<h6>api_view</h6>
 <ul>
     <li><a href="{% url 'simplest_api_3_list' %}">API List View</a></li>
     <li><a href="{% url 'simplest_api_3_list' %}">API List View</a></li>
@@ -28,7 +28,8 @@
 </ul>
 <h6>model viewset</h6>
 <ul>
-    <li><a href="#">Model view</a></li>
+    <li><a href="{% url 'cars-list' %}">Model view: list</a></li>
+    <li><a href="{% url 'cars-detail' 1 %}">Model view: detail</a></li>
 </ul>
 <br>
 

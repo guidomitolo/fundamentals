@@ -1,4 +1,3 @@
-from django.core import serializers
 from django.shortcuts import render
 from cars.forms import CarsForm
 
@@ -77,6 +76,6 @@ def simplest_api_3_delete(request, pk):
 
 # 6. ModelViewSet
 # set of related views in a single class
-class simplest_api_3(viewsets.ModelViewSet):
+class simplest_api_4(viewsets.ModelViewSet):
     queryset = Cars.objects.all()
     serializer_class = CarsSerializer
