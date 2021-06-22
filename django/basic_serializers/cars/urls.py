@@ -22,5 +22,3 @@ urlpatterns = [
     path('simplest_api_3_delete/<str:pk>', simplest_api_3_delete, name='simplest_api_3_delete'),
     path('', include(router.urls))
 ]
-
-print(router.__dict__)

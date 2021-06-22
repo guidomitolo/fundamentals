@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main.views import home
+from houses.views import houses_list, houses_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('cars/', include('cars.urls'))
+    path('cars/', include('cars.urls')),
+    path('houses/', houses_list, name='houses'),
+    path('houses/<int:pk>', houses_detail, name='houses_detail')
 ]

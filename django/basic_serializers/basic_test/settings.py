@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     # rest_framework module
     'rest_framework',
     # cars app
-    'cars.apps.CarsConfig'
+    'cars.apps.CarsConfig',
+    # houses app
+    'houses.apps.HousesConfig'
 ]
 
 MIDDLEWARE = [
