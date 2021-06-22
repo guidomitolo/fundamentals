@@ -11,8 +11,25 @@
 </form>
 
 <br>
-<a href="{% url 'simplest_api' %}">API_1</a>
-<a href="{% url 'simplest_api_2' %}">API_2</a>
+<h5>Django simple API</h5>
+<ul>
+    <li><a href="{% url 'simplest_api' %}">API_JSON_response</a></li>
+    <li><a href="{% url 'simplest_api_2' %}">API_HTTP_response</a></li>
+</ul>
+<h5>Django REST-Framework</h5>
+<h6> api_view</h6>
+<ul>
+    <li><a href="{% url 'simplest_api_3_list' %}">API List View</a></li>
+    <li><a href="{% url 'simplest_api_3_list' %}">API List View</a></li>
+    <li><a href="{% url 'simplest_api_3_detail' pk=1 %}">API Detail View (1 Default)</a></li>
+    <li><a href="{% url 'simplest_api_3_create' %}">API Create</a></li>
+    <li><a href="{% url 'simplest_api_3_update' pk=1 %}">API Update View (1 Default)</a></li>
+    <li><a href="{% url 'simplest_api_3_delete' pk=1 %}">API Delete View (1 Default)</a></li>
+</ul>
+<h6>model viewset</h6>
+<ul>
+    <li><a href="#">Model view</a></li>
+</ul>
 <br>
 
 {% endblock %}

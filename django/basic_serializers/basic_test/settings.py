@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # rest_framework module
+    'rest_framework',
     # cars app
     'cars.apps.CarsConfig'
 ]

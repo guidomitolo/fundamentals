@@ -14,3 +14,7 @@ class Cars(models.Model):
     date = models.DateField('Date', null=True, blank=True)
     price = models.FloatField('Price', null=True, blank=True)
     condition = models.CharField(max_length=32, choices=CONDITION, blank=True, null=True)
+
+
+    def __str__(self,):
+        return f'{self.model}'
