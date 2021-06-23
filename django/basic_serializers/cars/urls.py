@@ -1,5 +1,4 @@
 from django.urls import path, include
-from django.conf.urls import url
 
 from cars.views import cars, simplest_api, simplest_api_2, simplest_api_4, simplest_api_3_list, simplest_api_3_detail, simplest_api_3_create, simplest_api_3_update, simplest_api_3_delete
 
@@ -20,5 +19,5 @@ urlpatterns = [
     path('simplest_api_3_create', simplest_api_3_create, name='simplest_api_3_create'),
     path('simplest_api_3_update/<str:pk>', simplest_api_3_update, name='simplest_api_3_update'),
     path('simplest_api_3_delete/<str:pk>', simplest_api_3_delete, name='simplest_api_3_delete'),
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]

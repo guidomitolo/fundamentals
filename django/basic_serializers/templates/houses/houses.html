@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<h1>Houses</h1>
+<h4>DB data</h4>
+{%for house in data %}
+<p>{{ house }}</p>
+{% endfor %}
+<br>
+
+<h5>Django REST-Framework</h5>
+<ul>
+    <li><a href="{% url 'houses_api' %}">See API</a></li>
+</ul>
+
+{% endblock %}

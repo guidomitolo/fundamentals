@@ -14,7 +14,8 @@ class HousesSerializer(serializers.Serializer):
     m2 = serializers.IntegerField()
     pool = serializers.BooleanField()
     price = serializers.FloatField()
- 
+
+    # https://www.django-rest-framework.org/api-guide/serializers/#saving-instances 
     def create(self, validated_data):
         return Houses.objects.create(**validated_data)
 

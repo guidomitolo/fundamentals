@@ -16,12 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main.views import home
-from houses.views import houses_list, houses_detail
+from houses.views_REST import houses_detail, houses_list, houses
+from houses.viewsets_REST import houses_list as houses_list_class
+from houses.viewsets_REST import houses_detail as houses_detail_class
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # home
     path('', home, name='home'),
+    # cars urls
     path('cars/', include('cars.urls')),
-    path('houses/', houses_list, name='houses'),
-    path('houses/<int:pk>', houses_detail, name='houses_detail')
-]
+    # houses db+api
+    path('houses/', houses, name='houses'),
+    # REST Framwork views/templates requires url declaration
+    # path('houses/api', houses_list, name='houses_api'),
+    path('houses/api', houses_list_class.as_view()),
+    # path('houses/api/<int:pk>', houses_detail),
+    path('houses/api/<int:pk>', houses_detail_class.as_view()),
+] 
+
