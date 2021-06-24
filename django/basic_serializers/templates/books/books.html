@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<h1>Books</h1>
+<h4>DB data</h4>
+{%for book in data %}
+<p>{{ book }}</p>
+{% endfor %}
+<br>
+
+<h5>Django REST-Framework</h5>
+<p>Book List</p>
+<ul>
+    <li><a href="#">See API</a></li>
+</ul>
+<p>Librarians</p>
+<ul>
+    <li><a href="#">See API</a></li>
+</ul>
+
+{% endblock %}

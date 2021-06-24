@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     # cars app
     'cars.apps.CarsConfig',
     # houses app
-    'houses.apps.HousesConfig'
+    'houses.apps.HousesConfig',
+    # books app
+    'books.apps.BooksConfig'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,6 @@ STATIC_URL = '/static/'
 
 
 DATE_INPUT_FORMATS = "%Y/%m/%d"
+
+
+LOGIN_REDIRECT_URL = 'home'

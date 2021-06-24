@@ -3,13 +3,15 @@ from cars.forms import CarsForm
 
 from django.http import JsonResponse, HttpResponse
 from cars.models import Cars
-from cars.serializer import data, CarsSerializer
+from cars.serializer import CarsSerializer
 
 # rest_framework module
 from rest_framework import viewsets # -> for model viewset
 from rest_framework.decorators import api_view # -> handels requests
 from rest_framework.response import Response # -> makes the template for the api
 
+# django built in serializer
+from django.core import serializers as django_serializers
 
 def cars(requests):
     if requests.method == 'POST':
@@ -28,9 +30,13 @@ def cars(requests):
 # it does not serialize it again.
 
 def django_serializer(requests):
+    # simplest example
+    # serializers object + serialize method + parameters: format + model
+    data = django_serializers.serialize("json", Cars.objects.all())
     return JsonResponse(data, safe=False)
 
 def django_serializer_2(request):
+    data = django_serializers.serialize("json", Cars.objects.all())
     return HttpResponse(data, content_type="application/json")
 
 # django rest framework views

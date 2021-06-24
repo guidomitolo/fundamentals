@@ -15,24 +15,42 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 from main.views import home
-from houses.views_REST import houses_detail, houses_list, houses
+
+from houses.views_REST import houses
+# from houses.views_REST import houses_detail, houses_list, houses
 from houses.viewsets_REST import houses_list as houses_list_class
 from houses.viewsets_REST import houses_detail as houses_detail_class
 
+from books.views import BooksDetail, BooksList, UserDetail, books, UserList
+
 
 urlpatterns = [
+    # admin
     path('admin/', admin.site.urls),
+
     # home
     path('', home, name='home'),
-    # cars urls
+
+    # cars app urls
     path('cars/', include('cars.urls')),
-    # houses db+api
+
+    # houses app db+api
     path('houses/', houses, name='houses'),
     # REST Framwork views/templates requires url declaration
     # path('houses/api', houses_list, name='houses_api'),
     path('houses/api', houses_list_class.as_view()),
     # path('houses/api/<int:pk>', houses_detail),
     path('houses/api/<int:pk>', houses_detail_class.as_view()),
+
+    # books app
+    path('books/', books, name='books'),
+    path('books/api', BooksList.as_view()),
+    path('books/api/<int:pk>', BooksDetail.as_view()),
+    # user list    
+    path('users/api', UserList.as_view()),
+    path('users/api/<int:pk>', UserDetail.as_view()),
+    path('api-auth/', include('rest_framework.urls')),
 ] 
 
