@@ -6,9 +6,9 @@ from cars.models import Cars
 from cars.serializer import data, CarsSerializer
 
 # rest_framework module
-from rest_framework import viewsets
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from rest_framework import viewsets # -> for model viewset
+from rest_framework.decorators import api_view # -> handels requests
+from rest_framework.response import Response # -> makes the template for the api
 
 
 def cars(requests):
@@ -23,34 +23,35 @@ def cars(requests):
 
 # django serializer views
 
-def simplest_api(requests):
-    return JsonResponse(data, safe=False)
-
 # HttpResponse class does not have an encoder. 
 # When we pass our already serialized JSON to it, 
 # it does not serialize it again.
-def simplest_api_2(request):
+
+def django_serializer(requests):
+    return JsonResponse(data, safe=False)
+
+def django_serializer_2(request):
     return HttpResponse(data, content_type="application/json")
 
 # django rest framework views
 
 # 1. decorators -> api_view (list items)
 @api_view(['GET'])
-def simplest_api_3_list(request):
+def rest_framework_api_view_list(request):
     cars = Cars.objects.all()
     serializer = CarsSerializer(cars, many=True)
     return Response(serializer.data)
 
 # 3. decorators -> api_view (detail)
 @api_view(['GET'])
-def simplest_api_3_detail(request, pk):
+def rest_framework_api_view_detail(request, pk):
     car = Cars.objects.get(pk=pk)
     serializer = CarsSerializer(car)
     return Response(serializer.data)
 
 # 4. decorators -> api_view (insert)
 @api_view(['POST'])
-def simplest_api_3_create(request):
+def rest_framework_api_view_create(request):
     # serialize json posted
     serializer = CarsSerializer(data=request.data)
     if serializer.is_valid():
@@ -59,7 +60,7 @@ def simplest_api_3_create(request):
 
 # 5. decorators -> api_view (update query)
 @api_view(['POST'])
-def simplest_api_3_update(request, pk):
+def rest_framework_api_view_update(request, pk):
     # serialize json posted
     car = Cars.objects.get(id=pk)
     serializer = CarsSerializer(instance=car, data=request.data)
@@ -69,13 +70,13 @@ def simplest_api_3_update(request, pk):
 
 # 6. decorators -> api_view (delete query)
 @api_view(['DELETE'])
-def simplest_api_3_delete(request, pk):
+def rest_framework_api_view_delete(request, pk):
     car = Cars.objects.get(id=pk)
     car.delete()
     return Response('Car deleted')
 
-# 6. ModelViewSet
+# 7. ModelViewSet
 # set of related views in a single class
-class simplest_api_4(viewsets.ModelViewSet):
+class rest_framework_model_viewset(viewsets.ModelViewSet):
     queryset = Cars.objects.all()
     serializer_class = CarsSerializer
