@@ -1,7 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 
-# Create your models here.
+
 class Books(models.Model):
 
     GENRE = (
@@ -13,7 +12,7 @@ class Books(models.Model):
 
     # related_name -> name to the reverse relationship from Users
     # ¿Which books did the librarian loaded?
-    librarian = models.ForeignKey(User, on_delete=models.CASCADE, related_name="books")
+    librarian = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="books")
 
     author = models.CharField('Author', max_length=128, null=True, blank=True)
     title = models.CharField('Title', max_length=128, null=True, blank=True)

@@ -23,19 +23,14 @@ from houses.views_REST import houses
 from houses.viewsets_REST import houses_list as houses_list_class
 from houses.viewsets_REST import houses_detail as houses_detail_class
 
-from books.views import BooksDetail, BooksList, UserDetail, books, UserList
-
 
 urlpatterns = [
     # admin
     path('admin/', admin.site.urls),
-
     # home
     path('', home, name='home'),
-
     # cars app urls
     path('cars/', include('cars.urls')),
-
     # houses app db+api
     path('houses/', houses, name='houses'),
     # REST Framwork views/templates requires url declaration
@@ -43,14 +38,7 @@ urlpatterns = [
     path('houses/api', houses_list_class.as_view()),
     # path('houses/api/<int:pk>', houses_detail),
     path('houses/api/<int:pk>', houses_detail_class.as_view()),
-
-    # books app
-    path('books/', books, name='books'),
-    path('books/api', BooksList.as_view()),
-    path('books/api/<int:pk>', BooksDetail.as_view()),
-    # user list    
-    path('users/api', UserList.as_view()),
-    path('users/api/<int:pk>', UserDetail.as_view()),
-    path('api-auth/', include('rest_framework.urls')),
+    # # books app
+    path('books/', include('books.urls_model'))
 ] 
 

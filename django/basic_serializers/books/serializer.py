@@ -17,8 +17,11 @@ class BooksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Books
         fields = '__all__'
+        # fields = ['librarian', 'author', 'title', 'genre', 'price']
 
     def create(self, validated_data):
+        print('serializer->Create')
+        print(validated_data)
         return Books.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
@@ -30,11 +33,11 @@ class BooksSerializer(serializers.ModelSerializer):
         return instance
 
 
-class UserSerializer(serializers.Serializer):
+class UserSerializer(serializers.ModelSerializer):
     # reverse relationship to books
     # ¿Which books did the librarian loaded?
     books = serializers.PrimaryKeyRelatedField(many=True, queryset=Books.objects.all())
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'books']
+        fields = ['id', 'username', 'email', 'books']
